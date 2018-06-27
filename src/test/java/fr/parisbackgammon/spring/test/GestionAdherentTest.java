@@ -40,7 +40,9 @@ public class GestionAdherentTest {
 	@Before
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
+//		crudAdherentsDao.setCrudAdherentsDao(dao);
 		crudAdherentsDao.setCrudAdherentsDao(dao);
+		
 	}
 
 	/**
