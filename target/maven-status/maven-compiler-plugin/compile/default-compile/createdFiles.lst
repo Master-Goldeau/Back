@@ -1,0 +1,10 @@
+fr\parisbackgammon\model\Adresse.class
+fr\parisbackgammon\spring\config\WebConfig.class
+fr\parisbackgammon\spring\config\ApplicationConfig.class
+fr\parisbackgammon\model\Offre.class
+fr\parisbackgammon\spring\service\ServiceImplAdherents.class
+fr\parisbackgammon\model\Adherent.class
+fr\parisbackgammon\model\Personne.class
+fr\parisbackgammon\dao\CrudAdherentsDAO.class
+fr\parisbackgammon\spring\config\WebAppInitializer.class
+fr\parisbackgammon\spring\service\IServicesAdherents.class
