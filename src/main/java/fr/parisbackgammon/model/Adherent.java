@@ -2,10 +2,15 @@ package fr.parisbackgammon.model;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.UniqueConstraint;
 
 import org.springframework.stereotype.Component;
 
@@ -18,18 +23,23 @@ import org.springframework.stereotype.Component;
  */
 @Component("adherent")
 @Entity
+@DiscriminatorValue("ADHERENT")
 public class Adherent extends Personne {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
+	@Column(name="Adherent_ID", unique=true)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long numeroAdherent;
-	private String nom;
-	private String prenom;
+
 	private Date dateNaissance;
 	private String email;
 	private String telephone;
+	
+	@OneToOne(optional = false)
+	@JoinColumn(name="ADRESSE_ID", referencedColumnName="adresseId")
+	@Embedded
 	private Adresse adresse;
-	private Offre offre;
+	
+//	private Offre offre;
 	private boolean ffbg;
 
 	// Constructeurs
@@ -38,16 +48,13 @@ public class Adherent extends Personne {
 	}
 
 	public Adherent(long numeroAdherent, String nom, String prenom, Date dateNaissance, String email, String telephone,
-			Adresse adresse, Offre offre, boolean ffbg) {
+			Adresse adresse, boolean ffbg) {
 		super();
 		this.numeroAdherent = numeroAdherent;
-		this.nom = nom;
-		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.email = email;
 		this.telephone = telephone;
 		this.adresse = adresse;
-		this.offre = offre;
 		this.ffbg = ffbg;
 	}
 
@@ -61,23 +68,7 @@ public class Adherent extends Personne {
 	public void setNumeroAdherent(long numeroAdherent) {
 		this.numeroAdherent = numeroAdherent;
 	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-
+	
 	public Date getDateNaissance() {
 		return dateNaissance;
 	}
@@ -110,13 +101,13 @@ public class Adherent extends Personne {
 		this.adresse = adresse;
 	}
 
-	public Offre getOffre() {
-		return offre;
-	}
-
-	public void setOffre(Offre offre) {
-		this.offre = offre;
-	}
+//	public Offre getOffre() {
+//		return offre;
+//	}
+//
+//	public void setOffre(Offre offre) {
+//		this.offre = offre;
+//	}
 
 	public boolean isFfbg() {
 		return ffbg;
@@ -125,8 +116,6 @@ public class Adherent extends Personne {
 	public void setFfbg(boolean ffbg) {
 		this.ffbg = ffbg;
 	}
-	
-	
 	
 
 }
