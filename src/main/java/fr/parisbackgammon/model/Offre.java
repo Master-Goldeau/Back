@@ -4,7 +4,7 @@ public class Offre {
 
 	
 
-	private String Id;
+//	private String Id;
 	
 	
 }

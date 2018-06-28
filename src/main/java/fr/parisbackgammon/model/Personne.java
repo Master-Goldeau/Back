@@ -3,9 +3,12 @@ package fr.parisbackgammon.model;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
 
 @Entity
 @Inheritance
@@ -14,14 +17,12 @@ import javax.persistence.InheritanceType;
 public abstract class Personne {
 	
 	@Id
-	@GeneratedValue
 	private String login;
 	private String password;
 	private String nom;
 	private String prenom;
 
 	// Constructeurs
-
 	public Personne() {
 		super();
 	}
@@ -36,7 +37,6 @@ public abstract class Personne {
 
 	
 	// Getter et Setter
-
 	public String getLogin() {
 		return login;
 	}
@@ -69,6 +69,4 @@ public abstract class Personne {
 		this.prenom = prenom;
 	}
 	
-	
-
 }

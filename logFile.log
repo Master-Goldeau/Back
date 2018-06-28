@@ -317,3 +317,71 @@ Caused by: java.lang.ClassCastException: org.hibernate.mapping.JoinedSubclass ca
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
 	... 46 common frames omitted
+14:18:29.612 234  [main] INFO  o.s.t.c.w.WebTestContextBootstrapper
+				- Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+14:18:29.625 247  [main] INFO  o.s.t.c.w.WebTestContextBootstrapper
+				- Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@71248c21, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@442675e1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6166e06f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@49e202ad, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c72da34, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6b0c2d26]
+14:18:29.698 320  [main] INFO  o.s.w.c.s.GenericWebApplicationContext
+				- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@15bb6bea: startup date [Thu Jun 28 14:18:29 CEST 2018]; root of context hierarchy
+14:18:30.125 747  [main] INFO  o.s.j.d.DriverManagerDataSource
+				- Loaded JDBC driver: com.mysql.jdbc.Driver
+14:18:30.174 796  [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+				- Building JPA container EntityManagerFactory for persistence unit 'default'
+14:18:30.193 815  [main] INFO  o.h.jpa.internal.util.LogHelper
+				- HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+14:18:30.243 865  [main] INFO  org.hibernate.Version
+				- HHH000412: Hibernate Core {4.3.5.Final}
+14:18:30.245 867  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000206: hibernate.properties not found
+14:18:30.246 868  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000021: Bytecode provider name : javassist
+14:18:30.395 1017 [main] INFO  o.h.annotations.common.Version
+				- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+14:18:30.632 1254 [main] INFO  org.hibernate.dialect.Dialect
+				- HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+14:18:30.734 1356 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory
+				- HHH000397: Using ASTQueryTranslatorFactory
+14:18:30.977 1599 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000228: Running hbm2ddl schema update
+14:18:30.977 1599 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000102: Fetching database metadata
+14:18:30.983 1605 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000396: Updating schema
+14:18:31.005 1627 [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000261: Table found: ParisBackgammon.adresse
+14:18:31.005 1627 [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000037: Columns: [ville, voie, numeroderue, codepostal, adresseid]
+14:18:31.005 1627 [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000108: Foreign keys: []
+14:18:31.005 1627 [main] INFO  o.h.tool.hbm2ddl.TableMetadata
+				- HHH000126: Indexes: [primary]
+14:18:31.006 1628 [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Personne
+14:18:31.008 1630 [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Personne
+14:18:31.010 1632 [main] INFO  java.sql.DatabaseMetaData
+				- HHH000262: Table not found: Personne
+14:18:31.018 1640 [main] ERROR o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000388: Unsuccessful: create table Personne (PERSONNE_TYPE varchar(31) not null, login varchar(255) not null auto_increment, nom varchar(255), password varchar(255), prenom varchar(255), dateNaissance date, email varchar(255), ffbg bit, Adherent_ID bigint, telephone varchar(255), ADRESSE_ID bigint not null, primary key (login))
+14:18:31.018 1640 [main] ERROR o.h.tool.hbm2ddl.SchemaUpdate
+				- Incorrect column specifier for column 'login'
+14:18:31.019 1641 [main] ERROR o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000388: Unsuccessful: alter table Personne add constraint FK_fp786vecyjq2aa3tolafovxtf foreign key (ADRESSE_ID) references Adresse (adresseid)
+14:18:31.019 1641 [main] ERROR o.h.tool.hbm2ddl.SchemaUpdate
+				- Table 'parisbackgammon.personne' doesn't exist
+14:18:31.020 1642 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate
+				- HHH000232: Schema update complete
+14:18:31.051 1673 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+				- Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:18:31.345 1967 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping
+				- Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+14:18:31.532 2154 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter
+				- Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@15bb6bea: startup date [Thu Jun 28 14:18:29 CEST 2018]; root of context hierarchy
+14:18:31.978 2600 [main] INFO  f.p.s.service.ServiceImplAdherents
+				- Persistance d'un nouvel adh?rent
+14:18:31.986 2608 [Thread-1] INFO  o.s.w.c.s.GenericWebApplicationContext
+				- Closing org.springframework.web.context.support.GenericWebApplicationContext@15bb6bea: startup date [Thu Jun 28 14:18:29 CEST 2018]; root of context hierarchy
+14:18:31.987 2609 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+				- Closing JPA EntityManagerFactory for persistence unit 'default'

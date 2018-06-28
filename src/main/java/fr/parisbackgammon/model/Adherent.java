@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
