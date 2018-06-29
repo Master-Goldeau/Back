@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * Cette interface permet de persister les nouvelles personnes dans la base de
- * données
+ * donnÃ©es
  * 
  * @version ParisBackgammon VJava8
  * @author Etienne Savary

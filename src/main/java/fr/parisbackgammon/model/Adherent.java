@@ -1,11 +1,14 @@
 package fr.parisbackgammon.model;
 
+import fr.parisbackgammon.model.Entity;
+
+
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
@@ -22,9 +25,10 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component("adherent")
-@Entity
+@javax.persistence.Entity
+@Embeddable
 @DiscriminatorValue("ADHERENT")
-public class Adherent extends Personne {
+public class Adherent extends Personne implements Entity {
 	
 	@Column(name="Adherent_ID", unique=true)
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -36,8 +40,9 @@ public class Adherent extends Personne {
 	
 	@OneToOne(optional = false)
 	@JoinColumn(name="ADRESSE_ID", referencedColumnName="adresseId")
-	@Embedded
 	private Adresse adresse;
+	
+	private int id;
 	
 //	private Offre offre;
 	private boolean ffbg;
@@ -116,6 +121,19 @@ public class Adherent extends Personne {
 	public void setFfbg(boolean ffbg) {
 		this.ffbg = ffbg;
 	}
-	
+
+	@Override
+	public Integer getId() {
+		// TODO Auto-generated method stub
+		return id;
+	}
+
+	@Override
+	public void setId(Integer id) {
+		this.id = id;
+		
+	}
+
+		
 
 }

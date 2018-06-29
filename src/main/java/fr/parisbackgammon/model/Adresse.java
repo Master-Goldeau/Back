@@ -3,12 +3,12 @@ package fr.parisbackgammon.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-@Embeddable
+
 @Entity
 public class Adresse implements Serializable {
 
@@ -19,6 +19,7 @@ public class Adresse implements Serializable {
 	private long adresseId;
 
 	@OneToOne(mappedBy="adresse")
+	@Embedded
 	private Adherent adherent;
 	private int numeroDeRue;
 	private String voie;
