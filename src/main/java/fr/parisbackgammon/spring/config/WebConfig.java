@@ -1,6 +1,5 @@
 package fr.parisbackgammon.spring.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -8,9 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 //configuration de la class dispatcher-servlet.xml: config jpaweb
 
@@ -19,7 +16,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = { "org.proxibanqueV4spring" })
 @Import({ ApplicationConfig.class })
 @PropertySource("classpath:application.properties")
-public class WebConfig extends WebMvcConfigurerAdapter {
+public class WebConfig implements WebMvcConfigurer {
 
 	// pr mapper une url avec un dossier
 	
@@ -28,7 +25,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 
-	// pr brancher angular sur spring: autorise les requetes redirigées
+	// pr brancher angular sur spring: autorise les requetes redirigï¿½es
 	
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {

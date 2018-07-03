@@ -1,19 +1,16 @@
 package fr.parisbackgammon.model;
 
-import fr.parisbackgammon.model.Entity;
-
-
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
-import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
@@ -25,13 +22,20 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component("adherent")
-@javax.persistence.Entity
-@Embeddable
+@Entity
 @DiscriminatorValue("ADHERENT")
-public class Adherent extends Personne implements Entity {
+public class Adherent implements Model {
 	
-	@Column(name="Adherent_ID", unique=true)
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="adherentId", unique=true)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer adherentId;
+	
+	private String login;
+	private String password;
+	private String nom;
+	private String prenom;
+	
 	private long numeroAdherent;
 
 	private Date dateNaissance;
@@ -39,10 +43,9 @@ public class Adherent extends Personne implements Entity {
 	private String telephone;
 	
 	@OneToOne(optional = false)
-	@JoinColumn(name="ADRESSE_ID", referencedColumnName="adresseId")
+	@JoinColumn(name="adresseId", referencedColumnName="adresseId")
+	@Embedded
 	private Adresse adresse;
-	
-	private int id;
 	
 //	private Offre offre;
 	private boolean ffbg;
@@ -65,6 +68,46 @@ public class Adherent extends Personne implements Entity {
 
 	
 	// getter & Setters
+	
+	public Integer getAdherentId() {
+		return adherentId;
+	}
+
+	public void setAdherentId(Integer adherentId) {
+		this.adherentId = adherentId;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
 	
 	public long getNumeroAdherent() {
 		return numeroAdherent;
@@ -124,16 +167,15 @@ public class Adherent extends Personne implements Entity {
 
 	@Override
 	public Integer getId() {
-		// TODO Auto-generated method stub
-		return id;
+		return adherentId;
+		
 	}
 
 	@Override
 	public void setId(Integer id) {
-		this.id = id;
+		this.adherentId = id;
 		
 	}
-
-		
+	
 
 }

@@ -5,18 +5,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import fr.parisbackgammon.dao.CrudAdherentsDAO;
-import fr.parisbackgammon.model.*;
+import fr.parisbackgammon.model.Adherent;
 import fr.parisbackgammon.spring.config.ApplicationConfig;
-import fr.parisbackgammon.spring.service.ServiceImplAdherents;
-
-
-
+import fr.parisbackgammon.spring.service.AdherentService;
 
 
 /**
@@ -33,16 +31,15 @@ import fr.parisbackgammon.spring.service.ServiceImplAdherents;
 public class GestionAdherentTest {
 
 	@Mock
-	CrudAdherentsDAO dao;
-
-	private ServiceImplAdherents crudAdherentsDao= new ServiceImplAdherents();
+	@Autowired
+	private AdherentService adherentService;
+	
 	
 	@Before
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
-//		crudAdherentsDao.setCrudAdherentsDao(dao);
-		crudAdherentsDao.setCrudAdherentsDao(dao);
-		
+
+//		CRUDADHERENTSDAO.SETCRUDADHERENTSDAO(DAO);
 	}
 
 	/**
@@ -53,6 +50,8 @@ public class GestionAdherentTest {
 	@Test
 	public void persistAdherent_Should_add_1_Adherent() {
 		Adherent a = new Adherent();
-		crudAdherentsDao.persistAdherent(a);
+//		a.setAdherentId(1);
+//		crudAdherentsDao.persistAdherent(a);
+		adherentService.create(a);
 	}
 }

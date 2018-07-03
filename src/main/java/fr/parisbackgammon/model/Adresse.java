@@ -3,23 +3,22 @@ package fr.parisbackgammon.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-
+@Embeddable
 @Entity
 public class Adresse implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name="adresseid")
+	@Column(name="adresseId")
 	private long adresseId;
 
 	@OneToOne(mappedBy="adresse")
-	@Embedded
 	private Adherent adherent;
 	private int numeroDeRue;
 	private String voie;
