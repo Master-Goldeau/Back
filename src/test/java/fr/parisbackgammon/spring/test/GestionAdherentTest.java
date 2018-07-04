@@ -11,7 +11,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import fr.parisbackgammon.dao.CrudAdherentsDAO;
 import fr.parisbackgammon.model.Adherent;
 import fr.parisbackgammon.spring.config.ApplicationConfig;
 import fr.parisbackgammon.spring.service.AdherentService;

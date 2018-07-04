@@ -1,6 +1,8 @@
 package fr.parisbackgammon.model;
 
-import java.sql.Date;
+
+import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -24,8 +26,13 @@ import org.springframework.stereotype.Component;
 @Component("adherent")
 @Entity
 @DiscriminatorValue("ADHERENT")
-public class Adherent implements Model {
+public class Adherent implements Serializable, Model {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4440359154250381874L;
+
 	@Column(name="adherentId", unique=true)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +43,12 @@ public class Adherent implements Model {
 	private String nom;
 	private String prenom;
 	
-	private long numeroAdherent;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int numeroAdherent;
 
-	private Date dateNaissance;
+//	@Temporal(TemporalType.DATE)
+	private LocalDate dateNaissance;
+//	private Integer dateNaissance;
 	private String email;
 	private String telephone;
 	
@@ -55,11 +65,11 @@ public class Adherent implements Model {
 	public Adherent() {
 	}
 
-	public Adherent(long numeroAdherent, String nom, String prenom, Date dateNaissance, String email, String telephone,
+	public Adherent(int numeroAdherent, String nom, String prenom, LocalDate i, String email, String telephone,
 			Adresse adresse, boolean ffbg) {
 		super();
 		this.numeroAdherent = numeroAdherent;
-		this.dateNaissance = dateNaissance;
+		this.dateNaissance = i;
 		this.email = email;
 		this.telephone = telephone;
 		this.adresse = adresse;
@@ -113,15 +123,23 @@ public class Adherent implements Model {
 		return numeroAdherent;
 	}
 
-	public void setNumeroAdherent(long numeroAdherent) {
+	public void setNumeroAdherent(int numeroAdherent) {
 		this.numeroAdherent = numeroAdherent;
 	}
 	
-	public Date getDateNaissance() {
+//	public int getDateNaissance() {
+//		return dateNaissance;
+//	}
+//
+//	public void setDateNaissance(int dateNaissance) {
+//		this.dateNaissance = dateNaissance;
+//	}
+
+	public LocalDate getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(LocalDate dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 

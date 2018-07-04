@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.parisbackgammon.model.Model;
 
+
 public abstract class CrudService<MODEL extends Model> {
 
 	/**

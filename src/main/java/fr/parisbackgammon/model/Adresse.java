@@ -5,18 +5,21 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Embeddable
 @Entity
-public class Adresse implements Serializable {
+public class Adresse implements Serializable, Model{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="adresseId")
-	private long adresseId;
+	private int adresseId;
 
 	@OneToOne(mappedBy="adresse")
 	private Adherent adherent;
@@ -66,6 +69,33 @@ public class Adresse implements Serializable {
 
 	public void setAdherent(Adherent adherent) {
 		this.adherent = adherent;
+	}
+
+
+
+	@Override
+	public Integer getId() {
+		return (int) adresseId;
+	}
+
+
+
+	@Override
+	public void setId(Integer id) {
+		// TODO Auto-generated method stub
+		this.adresseId = id;
+	}
+
+
+
+	public long getAdresseId() {
+		return adresseId;
+	}
+
+
+
+	public void setAdresseId(Integer adresseId) {
+		this.adresseId = adresseId;
 	}
 
 

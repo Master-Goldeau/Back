@@ -1,0 +1,42 @@
+13:18:10.728 229  [main] INFO  o.s.t.c.w.WebTestContextBootstrapper
+				- Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+13:18:10.745 246  [main] INFO  o.s.t.c.w.WebTestContextBootstrapper
+				- Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@71248c21, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@442675e1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6166e06f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@49e202ad, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c72da34, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6b0c2d26]
+13:18:10.833 334  [main] INFO  o.s.w.c.s.GenericWebApplicationContext
+				- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@15bb6bea: startup date [Mon Jul 02 13:18:10 CEST 2018]; root of context hierarchy
+13:18:11.251 752  [main] INFO  o.s.j.d.DriverManagerDataSource
+				- Loaded JDBC driver: com.mysql.jdbc.Driver
+13:18:11.300 801  [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+				- Building JPA container EntityManagerFactory for persistence unit 'default'
+13:18:11.316 817  [main] INFO  o.h.jpa.internal.util.LogHelper
+				- HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+13:18:11.363 864  [main] INFO  org.hibernate.Version
+				- HHH000412: Hibernate Core {4.3.5.Final}
+13:18:11.365 866  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000206: hibernate.properties not found
+13:18:11.366 867  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000021: Bytecode provider name : javassist
+13:18:11.532 1033 [main] INFO  o.h.annotations.common.Version
+				- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+13:18:11.784 1285 [main] INFO  org.hibernate.dialect.Dialect
+				- HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+13:18:11.907 1408 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory
+				- HHH000397: Using ASTQueryTranslatorFactory
+13:18:12.182 1683 [main] INFO  o.h.tool.hbm2ddl.SchemaExport
+				- HHH000227: Running hbm2ddl schema export
+13:18:13.705 3206 [main] INFO  o.h.tool.hbm2ddl.SchemaExport
+				- HHH000230: Schema export complete
+13:18:13.766 3267 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+				- Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:18:14.042 3543 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping
+				- Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+13:18:14.213 3714 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter
+				- Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@15bb6bea: startup date [Mon Jul 02 13:18:10 CEST 2018]; root of context hierarchy
+13:18:14.660 4161 [main] INFO  f.p.s.service.ServiceImplAdherents
+				- Persistance d'un nouvel adh?rent
+13:18:14.668 4169 [Thread-1] INFO  o.s.w.c.s.GenericWebApplicationContext
+				- Closing org.springframework.web.context.support.GenericWebApplicationContext@15bb6bea: startup date [Mon Jul 02 13:18:10 CEST 2018]; root of context hierarchy
+13:18:14.669 4170 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+				- Closing JPA EntityManagerFactory for persistence unit 'default'
