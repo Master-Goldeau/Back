@@ -37,15 +37,10 @@ public class Adherent implements Serializable, Model {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer adherentId;
-	
 	private String login;
 	private String password;
 	private String nom;
-	private String prenom;
-	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int numeroAdherent;
-
+	private String prenom;		
 //	@Temporal(TemporalType.DATE)
 	private LocalDate dateNaissance;
 //	private Integer dateNaissance;
@@ -65,10 +60,13 @@ public class Adherent implements Serializable, Model {
 	public Adherent() {
 	}
 
-	public Adherent(int numeroAdherent, String nom, String prenom, LocalDate i, String email, String telephone,
+	public Adherent(String login, String password, String nom, String prenom, LocalDate i, String email, String telephone,
 			Adresse adresse, boolean ffbg) {
 		super();
-		this.numeroAdherent = numeroAdherent;
+		this.login=login;
+		this.password=password;
+		this.nom=nom;
+		this.prenom=prenom;
 		this.dateNaissance = i;
 		this.email = email;
 		this.telephone = telephone;
@@ -118,15 +116,7 @@ public class Adherent implements Serializable, Model {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	
-	public long getNumeroAdherent() {
-		return numeroAdherent;
-	}
-
-	public void setNumeroAdherent(int numeroAdherent) {
-		this.numeroAdherent = numeroAdherent;
-	}
-	
+		
 //	public int getDateNaissance() {
 //		return dateNaissance;
 //	}

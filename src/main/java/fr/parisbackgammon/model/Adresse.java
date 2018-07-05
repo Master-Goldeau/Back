@@ -30,7 +30,7 @@ public class Adresse implements Serializable, Model{
 	
 	
 	public long getAdherentID(Adherent adherent) {
-		return adherent.getNumeroAdherent();
+		return adherent.getAdherentId();
 	}
 	
 

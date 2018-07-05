@@ -27,7 +27,12 @@ public class InitBean implements InitializingBean {
 		Adresse ad654654 = new Adresse();
 		crudServiceAdresse.create(ad654654);
 		
-		Adherent Adherent1 = new Adherent(654,"Guillard","Ibrahima",LocalDate.now(),"guillard@gmail.com","064585456321",ad654654,true);
+//			
+//		LocalDate localDate;
+//		
+//		LocalDate birthdate = new LocalDate (1970, 1, 20);
+		
+		Adherent Adherent1 = new Adherent("iguillard", "password", "Guillard", "Ibrahima", LocalDate.of(2001, 5, 8), "guillard@gmail.com", "0674010687", ad654654, true);
 		crudServiceAdherent.create(Adherent1);
 
 		ad654654.setAdherent(Adherent1);
@@ -35,14 +40,14 @@ public class InitBean implements InitializingBean {
 		ad654654.setNumeroDeRue(29);
 		ad654654.setVille("RomainVille");
 		ad654654.setVoie("rue des joueurs");
-		crudServiceAdresse.edit(ad654654);
+		crudServiceAdresse.create(ad654654);
 		
 		Adherent1.setAdresse(ad654654);
 		crudServiceAdherent.edit(Adherent1);
 				
 		System.out.println(Adherent1);
 		
-		System.out.println(Adherent1.getEmail());
+		System.out.println(Adherent1.getPrenom());
 	}
 
 }
