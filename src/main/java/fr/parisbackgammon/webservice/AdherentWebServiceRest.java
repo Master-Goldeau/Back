@@ -3,6 +3,9 @@ package fr.parisbackgammon.webservice;
 
 import java.util.List;
 
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,13 +26,24 @@ import fr.parisbackgammon.spring.service.AdherentService;
 public class AdherentWebServiceRest {
 
 	@Autowired
-	private AdherentService adherentService;
+	AdherentService adherentService;
 //	private static logger LOGGER = LoggerFactory.getLogger(AdherentWebServiceRest.class);
 	
 	@PostMapping(value = "/adherent", produces = "application/json")
 	public Adherent create(@RequestBody Adherent adherent) {
 		return this.adherentService.create(adherent);
 	}
+	
+//	@PostMapping(value = "/adherent", produces = "application/json")
+//	public Adherent create(@RequestBody Adherent adherent) {
+//		try{
+//			this.adherentService.create(adherent);
+//			return new ResponseEntity<>(HttpStatus.OK);
+//		}catch (ServiceException e) {
+//			LOGGER.warn("exeption thrown", e);
+//			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//		}
+//	}
 	
 	@GetMapping({""})
 	public List<Adherent> readAll() {

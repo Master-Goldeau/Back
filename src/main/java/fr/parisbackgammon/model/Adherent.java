@@ -1,7 +1,7 @@
 package fr.parisbackgammon.model;
 
-
 import java.io.Serializable;
+
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -73,10 +73,8 @@ public class Adherent implements Serializable, Model {
 		this.adresse = adresse;
 		this.ffbg = ffbg;
 	}
-
 	
 	// getter & Setters
-	
 	public Integer getAdherentId() {
 		return adherentId;
 	}

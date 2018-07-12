@@ -28,18 +28,12 @@ public class Adresse implements Serializable, Model{
 	private String codepostal;
 	private String ville;
 	
-	
 	public long getAdherentID(Adherent adherent) {
 		return adherent.getAdherentId();
 	}
-	
-
-
 	public int getNumeroDeRue() {
 		return numeroDeRue;
 	}
-
-
 	public void setNumeroDeRue(int numeroDeRue) {
 		this.numeroDeRue = numeroDeRue;
 	}
@@ -61,24 +55,17 @@ public class Adresse implements Serializable, Model{
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-	
 	public Adherent getAdherent() {
 		return adherent;
 	}
-
-
 	public void setAdherent(Adherent adherent) {
 		this.adherent = adherent;
 	}
-
-
 
 	@Override
 	public Integer getId() {
 		return (int) adresseId;
 	}
-
-
 
 	@Override
 	public void setId(Integer id) {
@@ -86,23 +73,11 @@ public class Adresse implements Serializable, Model{
 		this.adresseId = id;
 	}
 
-
-
 	public long getAdresseId() {
 		return adresseId;
 	}
 
-
-
 	public void setAdresseId(Integer adresseId) {
 		this.adresseId = adresseId;
 	}
-
-
-
-
-
-
 }
-
-

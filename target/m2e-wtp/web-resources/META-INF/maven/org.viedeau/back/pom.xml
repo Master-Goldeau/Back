@@ -12,7 +12,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
+
 		<java.version>1.8</java.version>
 
 		<slf4j.version>1.7.5</slf4j.version>
@@ -30,7 +30,7 @@
 
 
 	<dependencies>
-		
+
 		<!-- Servlet 3.1 API -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -60,15 +60,15 @@
 			<version>${jsp.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- Jackson API for JSON -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.6</version>
 		</dependency>
-		
-		
+
+
 
 		<!-- Spring -->
 		<dependency>
@@ -128,9 +128,6 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
-
-		<!-- Dépendances aux modules de persistence de Spring. -->
 
 		<dependency>
 			<groupId>javax.persistence</groupId>
@@ -222,6 +219,13 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.0.6</version>
 		</dependency>
 
 	</dependencies>
