@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = { "org.proxibanqueV4spring" })
+@ComponentScan(basePackages = { "fr.parisBackgammon.spring" })
 @Import({ ApplicationConfig.class })
 @PropertySource("classpath:application.properties")
 public class WebConfig implements WebMvcConfigurer {

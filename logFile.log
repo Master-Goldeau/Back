@@ -244,3 +244,45 @@ Caused by: java.net.ConnectException: Connection refused: connect
 				- Closing org.springframework.web.context.support.GenericWebApplicationContext@71c8becc: startup date [Thu Jul 12 11:05:30 CEST 2018]; root of context hierarchy
 11:05:33.038 2892 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
 				- Closing JPA EntityManagerFactory for persistence unit 'default'
+11:52:59.457 282  [main] INFO  o.s.t.c.w.WebTestContextBootstrapper
+				- Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+11:52:59.467 292  [main] INFO  o.s.t.c.w.WebTestContextBootstrapper
+				- Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@67e2d983, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5d47c63f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5ea434c8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3bbc39f8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4ae3c1cd, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@29f69090]
+11:52:59.546 371  [main] INFO  o.s.w.c.s.GenericWebApplicationContext
+				- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@71c8becc: startup date [Thu Jul 12 11:52:59 CEST 2018]; root of context hierarchy
+11:53:00.014 839  [main] INFO  o.s.j.d.DriverManagerDataSource
+				- Loaded JDBC driver: com.mysql.jdbc.Driver
+11:53:00.077 902  [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+				- Building JPA container EntityManagerFactory for persistence unit 'default'
+11:53:00.092 917  [main] INFO  o.h.jpa.internal.util.LogHelper
+				- HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+11:53:00.155 980  [main] INFO  org.hibernate.Version
+				- HHH000412: Hibernate Core {5.3.1.Final}
+11:53:00.155 980  [main] INFO  org.hibernate.cfg.Environment
+				- HHH000206: hibernate.properties not found
+11:53:00.233 1058 [main] INFO  o.h.annotations.common.Version
+				- HCANN000001: Hibernate Commons Annotations {5.0.3.Final}
+11:53:00.655 1480 [main] INFO  org.hibernate.dialect.Dialect
+				- HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11:53:01.317 2142 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+				- Initialized JPA EntityManagerFactory for persistence unit 'default'
+11:53:01.783 2608 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping
+				- Mapped "{[/api/adherent/{id}],methods=[PUT]}" onto public fr.parisbackgammon.model.Adherent fr.parisbackgammon.webservice.AdherentWebServiceRest.update(fr.parisbackgammon.model.Adherent)
+11:53:01.783 2608 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping
+				- Mapped "{[/api/adherent/{id}],methods=[DELETE]}" onto public void fr.parisbackgammon.webservice.AdherentWebServiceRest.delete(java.lang.Integer)
+11:53:01.783 2608 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping
+				- Mapped "{[/api/adherent/adherent],methods=[POST],produces=[application/json]}" onto public fr.parisbackgammon.model.Adherent fr.parisbackgammon.webservice.AdherentWebServiceRest.create(fr.parisbackgammon.model.Adherent)
+11:53:01.783 2608 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping
+				- Mapped "{[/api/adherent/{id}],methods=[GET]}" onto public fr.parisbackgammon.model.Adherent fr.parisbackgammon.webservice.AdherentWebServiceRest.readMe(java.lang.Integer)
+11:53:01.783 2608 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping
+				- Mapped "{[/api/adherent],methods=[GET]}" onto public java.util.List<fr.parisbackgammon.model.Adherent> fr.parisbackgammon.webservice.AdherentWebServiceRest.readAll()
+11:53:01.798 2623 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping
+				- Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+11:53:01.955 2780 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter
+				- Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@71c8becc: startup date [Thu Jul 12 11:52:59 CEST 2018]; root of context hierarchy
+11:53:02.142 2967 [Thread-1] INFO  o.s.w.c.s.GenericWebApplicationContext
+				- Closing org.springframework.web.context.support.GenericWebApplicationContext@71c8becc: startup date [Thu Jul 12 11:52:59 CEST 2018]; root of context hierarchy
+11:53:02.142 2967 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+				- Closing JPA EntityManagerFactory for persistence unit 'default'
