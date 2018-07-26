@@ -286,3 +286,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 				- Closing org.springframework.web.context.support.GenericWebApplicationContext@71c8becc: startup date [Thu Jul 12 11:52:59 CEST 2018]; root of context hierarchy
 11:53:02.142 2967 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
 				- Closing JPA EntityManagerFactory for persistence unit 'default'
+10:51:49.498 737  [main] WARN  o.a.p.p.font.FileSystemFontProvider
+				- New fonts found, font cache will be re-built
+10:51:49.500 739  [main] WARN  o.a.p.p.font.FileSystemFontProvider
+				- Building on-disk font cache, this may take a while
+10:51:50.318 1557 [main] WARN  o.a.p.p.font.FileSystemFontProvider
+				- Finished building on-disk font cache, found 398 fonts
